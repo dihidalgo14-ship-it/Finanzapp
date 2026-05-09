@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: #f5f5f7;
+    color: #1d1d1f;
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; }
+  input[type='number'] { -moz-appearance: textfield; }
+}
+
+@layer components {
+  .mac-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+  }
+  .mac-input {
+    background: rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #1d1d1f;
+    transition: all 0.15s;
+    width: 100%;
+    font-family: inherit;
+  }
+  .mac-input:focus {
+    outline: none;
+    border-color: #0071e3;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0,113,227,0.15);
+  }
+  .mac-input::placeholder { color: #86868b; }
+  .mac-btn {
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: all 0.15s;
+    cursor: pointer;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .mac-btn-primary {
+    background: #0071e3;
+    color: white;
+    border: none;
+  }
+  .mac-btn-primary:hover { background: #0077ed; }
+  .mac-btn-primary:active { background: #006acc; transform: scale(0.98); }
+  .mac-btn-secondary {
+    background: rgba(0,0,0,0.05);
+    color: #1d1d1f;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+  .mac-btn-secondary:hover { background: rgba(0,0,0,0.08); }
+  .mac-btn-destructive {
+    background: rgba(255,59,48,0.08);
+    color: #ff3b30;
+    border: 1px solid rgba(255,59,48,0.2);
+  }
+  .mac-btn-destructive:hover { background: rgba(255,59,48,0.14); }
+  .mac-select {
+    background: rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 13px;
+    color: #1d1d1f;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .mac-select:focus { outline: none; border-color: #0071e3; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .mono { font-family: 'DM Mono', 'SF Mono', monospace; }
+}
